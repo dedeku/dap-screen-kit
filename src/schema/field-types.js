@@ -37,6 +37,33 @@ export const FIELD_TYPES = [
 
 export const FIELD_TYPE_SET = new Set(FIELD_TYPES.map((f) => f.type));
 
+// Canonical field type -> the PRIMARY dap-design-system React component whose
+// props the builder edits (options/items are field data, not this component's
+// props). gen-field-schema.mjs reads this to key the extracted prop model by
+// field type, so the builder editors and Storybook controls stay in sync with
+// what the components actually expose.
+export const FIELD_DS_COMPONENT = {
+  title: "DapDSTypography",
+  "section-label": "DapDSTypography",
+  "info-callout": "DapDSCallout",
+  "text-field": "DapDSInput",
+  "number-field": "DapDSNumberInput",
+  textarea: "DapDSTextarea",
+  "date-picker": "DapDSDatePicker",
+  "radio-group": "DapDSRadioGroup",
+  dropdown: "DapDSSelect",
+  "content-switcher": "DapDSContentSwitcher",
+  checkbox: "DapDSCheckbox",
+  switch: "DapDSSwitch",
+  checklist: "DapDSCheckbox",
+  "chip-single": "DapDSChip",
+  "chip-multi": "DapDSChip",
+  "data-list": "DapDSCard",
+  timeline: "DapDSTimeline",
+  "file-upload": "DapDSFileInput",
+  repeatable: "DapDSCard",
+};
+
 // Value-carrying fields (everything that can appear in the values map / feed a
 // visibleWhen predicate). Pure display fields are excluded.
 export const VALUE_FIELD_TYPES = new Set(

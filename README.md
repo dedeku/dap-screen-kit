@@ -93,7 +93,10 @@ existing renderers).
 - [x] `<ScreenRenderer>` + Header/Field/Actions (DS Typography, no raw markup)
 - [ ] registry: info-callout, number-field, textarea, checklist, chip-single,
       data-list, timeline, file-upload, repeatable
-- [ ] `gen-field-schema.mjs` — port `.d.ts` extractor from `dap-ds-lab`
+- [x] `gen-field-schema.mjs` — `.d.ts` extractor → `src/generated/field-schema.json`
+      (per field type: DS component + prop enums/defaults). Accessors:
+      `getFieldPropModel` / `getPropEnum` / `getPropDefault` (DS-free via
+      `@dap/screen-kit/schema`). Regen after DS bump: `npm run gen:field-schema`.
 - [ ] migrate form-builder → delete PreviewPanel render
 - [ ] migrate elvesztettem → delete local ScreenRenderer
 - [ ] Storybook canonical stories through `registry`
