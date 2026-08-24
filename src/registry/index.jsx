@@ -89,7 +89,7 @@ export const registry = {
   "info-callout": {
     width: "full",
     render: (field) => (
-      <DapDSCalloutReact variant={field.variant || "neutral"} title={field.title || undefined}>
+      <DapDSCalloutReact variant={field.variant || "info"} title={field.title || undefined}>
         {(field.body || field.label || "").split("\n").map((line, i) => (
           <p key={i} style={{ margin: i ? "6px 0 0" : 0 }}>
             {line}
