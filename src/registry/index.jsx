@@ -99,6 +99,35 @@ export const registry = {
     ),
   },
 
+  // Content call-to-action row: a set of buttons placed IN the screen body
+  // (distinct from the footer nav `actions`). Non-navigational by default — a
+  // flow runner may pass onAction to react to a button. buttons: [{ id, label,
+  // variant, size }]; align: start | center | end | between.
+  "button-row": {
+    width: "full",
+    render: (field, { onAction } = {}) => {
+      const buttons = Array.isArray(field.buttons) ? field.buttons : [];
+      const align = field.align || "start";
+      const justify =
+        align === "center" ? "center" : align === "end" ? "flex-end" : align === "between" ? "space-between" : "flex-start";
+      return (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", justifyContent: justify }}>
+          {buttons.map((b) => (
+            <DapDSButtonReact
+              key={b.id}
+              variant={b.variant || "primary"}
+              size={b.size || "lg"}
+              danger={b.danger || undefined}
+              onClick={onAction ? () => onAction(b) : undefined}
+            >
+              {b.label}
+            </DapDSButtonReact>
+          ))}
+        </div>
+      );
+    },
+  },
+
   /* ---- text inputs --------------------------------------------------- */
   // helperText -> `description` (helper under the label), NOT `feedback` (that is
   // the validation message slot). The life-event flow used `feedback` — canonical
