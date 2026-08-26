@@ -1,4 +1,5 @@
 import { registry } from "../registry/index.jsx";
+import renderComponentNode from "./ComponentNode.jsx";
 
 // Renders one field through the registry, controlled.
 //   values : the whole values map (a field reads values[field.id]; composites
@@ -8,6 +9,20 @@ import { registry } from "../registry/index.jsx";
 // The wrapper carries data-field-id (canvas editor overlays measure it) and the
 // column span: registry default, then field.width.
 export default function Field({ field, values, onChange }) {
+  // Generic DS-component node (builder catalog): type "ds:<DapDSName>", carrying
+  // a free-form `props` object + optional `children`. Rendered by the generic
+  // component renderer, NOT the field-type registry. Presentational — carries no
+  // value, so the flow/value engine ignores it (not in VALUE_FIELD_TYPES).
+  if (typeof field.type === "string" && field.type.startsWith("ds:")) {
+    const wantsFull = field.width !== "half";
+    const style = wantsFull ? { gridColumn: "1 / -1" } : undefined;
+    return (
+      <div style={style} data-field-id={field.id}>
+        {renderComponentNode({ component: field.type.slice(3), props: field.props, children: field.children })}
+      </div>
+    );
+  }
+
   const entry = registry[field.type];
 
   if (!entry) {
