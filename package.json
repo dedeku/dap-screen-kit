@@ -1,6 +1,6 @@
 {
   "name": "@dap/screen-kit",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Common DAP screen runtime: single-source registry + <ScreenRenderer> over dap-design-system. One render path shared by the form-builder, the life-event flows, the player and Storybook.",
   "license": "UNLICENSED",
   "private": true,
@@ -14,20 +14,23 @@
     "./schema": {
       "import": "./dist/schema/index.js"
     },
-    "./field-schema.json": "./src/generated/field-schema.json"
+    "./field-schema.json": "./src/generated/field-schema.json",
+    "./component-catalog.json": "./src/generated/component-catalog.json"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "src/generated/field-schema.json"
+    "src/generated/field-schema.json",
+    "src/generated/component-catalog.json"
   ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "prepare": "tsup",
     "gen:field-schema": "node scripts/gen-field-schema.mjs",
+    "gen:component-catalog": "node scripts/gen-component-catalog.mjs",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

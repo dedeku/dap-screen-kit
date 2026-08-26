@@ -7,6 +7,9 @@ export { default as Actions } from "./render/Actions.jsx";
 
 export { registry, isWired } from "./registry/index.jsx";
 
+// generic DS-component node renderer (catalog components on the builder canvas)
+export { default as renderComponentNode, resolveComponent } from "./render/ComponentNode.jsx";
+
 // schema (field-type catalog, visibleWhen predicate, JSON typedefs)
 export * from "./schema/index.js";
 
