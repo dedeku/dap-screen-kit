@@ -19,6 +19,7 @@ export const FIELD_TYPES = [
   { type: "title",            label: "Title",            icon: "◈", group: "layout",  wired: true, hasOptions: false, labelKind: "label",      placeholder: false },
   { type: "section-label",    label: "Section label",    icon: "§", group: "layout",  wired: true, hasOptions: false, labelKind: "label",      placeholder: false },
   { type: "info-callout",     label: "Info callout",     icon: "ⓘ", group: "layout",  wired: true, hasOptions: false, labelKind: "none",       placeholder: false },
+  { type: "button-row",       label: "Button row",       icon: "▭", group: "layout",  wired: true, hasOptions: false, labelKind: "none",       placeholder: false },
 
   // text inputs
   { type: "text-field",       label: "Text field",       icon: "T", group: "input",   wired: true, hasOptions: false, labelKind: "label",      placeholder: true  },
@@ -64,6 +65,7 @@ export const FIELD_DS_COMPONENT = {
   title: "DapDSTypography",
   "section-label": "DapDSTypography",
   "info-callout": "DapDSCallout",
+  "button-row": "DapDSButton",
   "text-field": "DapDSInput",
   "number-field": "DapDSNumberInput",
   textarea: "DapDSTextarea",
@@ -86,7 +88,7 @@ export const FIELD_DS_COMPONENT = {
 // visibleWhen predicate). Pure display fields are excluded.
 export const VALUE_FIELD_TYPES = new Set(
   FIELD_TYPES.map((f) => f.type).filter(
-    (t) => !["title", "section-label", "info-callout", "data-list", "timeline"].includes(t),
+    (t) => !["title", "section-label", "info-callout", "button-row", "data-list", "timeline"].includes(t),
   ),
 );
 
