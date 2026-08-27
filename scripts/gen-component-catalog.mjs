@@ -214,13 +214,18 @@ function mergedProps(name) {
 const components = {};
 const missing = [];
 for (const entry of CATALOG_COMPONENTS) {
-  const kebab = kebabByReact[`${entry.name}React`];
-  if (!kebab) { missing.push(entry.name); continue; }
+  const isPattern = entry.kind === "pattern";
+  // Patterns are not DS custom elements — no kebab tag, no .d.ts base; their whole
+  // prop schema comes from the Storybook argTypes overlay (mergedProps' base is
+  // empty for a name with no .d.ts declaration).
+  const kebab = isPattern ? null : kebabByReact[`${entry.name}React`];
+  if (!isPattern && !kebab) { missing.push(entry.name); continue; }
   const { props, source } = mergedProps(entry.name);
   components[entry.name] = {
-    kebab: `dap-ds-${kebab}`,
+    kebab: kebab ? `dap-ds-${kebab}` : null,
     label: entry.label,
     slot: entry.slot ?? null,
+    kind: entry.kind ?? null,
     source,
     props,
   };

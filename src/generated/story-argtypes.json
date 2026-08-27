@@ -958,6 +958,364 @@
         "children": "Digitális Állampolgárság",
         "variant": "h1"
       }
+    },
+    "PatternCtaRow": {
+      "story": "Patterns/CTA Row",
+      "argTypes": {
+        "inverted": {
+          "control": "boolean"
+        },
+        "align": {
+          "control": "select",
+          "options": [
+            "start",
+            "center",
+            "end",
+            "between"
+          ]
+        },
+        "orientation": {
+          "control": "select",
+          "options": [
+            "row",
+            "column"
+          ]
+        },
+        "reverse": {
+          "control": "boolean"
+        },
+        "divider": {
+          "control": "boolean"
+        },
+        "fullBleed": {
+          "control": "boolean"
+        },
+        "fullWidth": {
+          "control": "boolean"
+        },
+        "maxWidth": {
+          "control": "number"
+        },
+        "a1": {
+          "control": "boolean"
+        },
+        "a1Text": {
+          "control": "text"
+        },
+        "a1Variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "subtle-neutral",
+            "subtle-quiet",
+            "subtle-menu",
+            "subtle-menu-item",
+            "primary-inverted",
+            "outline-inverted",
+            "subtle-inverted",
+            "clean-inverted",
+            "subtle-quiet-inverted"
+          ]
+        },
+        "a1Size": {
+          "control": "select",
+          "options": [
+            "lg",
+            "md",
+            "sm",
+            "xs"
+          ]
+        },
+        "a1Leading": {
+          "control": "text"
+        },
+        "a1Trailing": {
+          "control": "text"
+        },
+        "a1Danger": {
+          "control": "boolean"
+        },
+        "a1Loading": {
+          "control": "boolean"
+        },
+        "a1Disabled": {
+          "control": "boolean"
+        },
+        "a2": {
+          "control": "boolean"
+        },
+        "a2Text": {
+          "control": "text"
+        },
+        "a2Variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "subtle-neutral",
+            "subtle-quiet",
+            "subtle-menu",
+            "subtle-menu-item",
+            "primary-inverted",
+            "outline-inverted",
+            "subtle-inverted",
+            "clean-inverted",
+            "subtle-quiet-inverted"
+          ]
+        },
+        "a2Size": {
+          "control": "select",
+          "options": [
+            "lg",
+            "md",
+            "sm",
+            "xs"
+          ]
+        },
+        "a2Leading": {
+          "control": "text"
+        },
+        "a2Trailing": {
+          "control": "text"
+        },
+        "a2Danger": {
+          "control": "boolean"
+        },
+        "a2Loading": {
+          "control": "boolean"
+        },
+        "a2Disabled": {
+          "control": "boolean"
+        },
+        "a3": {
+          "control": "boolean"
+        },
+        "a3Text": {
+          "control": "text"
+        },
+        "a3Variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "subtle-neutral",
+            "subtle-quiet",
+            "subtle-menu",
+            "subtle-menu-item",
+            "primary-inverted",
+            "outline-inverted",
+            "subtle-inverted",
+            "clean-inverted",
+            "subtle-quiet-inverted"
+          ]
+        },
+        "a3Size": {
+          "control": "select",
+          "options": [
+            "lg",
+            "md",
+            "sm",
+            "xs"
+          ]
+        },
+        "a3Leading": {
+          "control": "text"
+        },
+        "a3Trailing": {
+          "control": "text"
+        },
+        "a3Danger": {
+          "control": "boolean"
+        },
+        "a3Loading": {
+          "control": "boolean"
+        },
+        "a3Disabled": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "inverted": false,
+        "align": "start",
+        "orientation": "row",
+        "reverse": false,
+        "divider": false,
+        "fullBleed": false,
+        "fullWidth": false,
+        "maxWidth": 720,
+        "a1": true,
+        "a1Text": "Kitöltés folytatása",
+        "a1Variant": "primary",
+        "a1Size": "lg",
+        "a1Leading": "false",
+        "a1Trailing": "arrow-right-line",
+        "a1Danger": false,
+        "a1Loading": false,
+        "a1Disabled": false,
+        "a2": true,
+        "a2Text": "Kérelem benyújtása",
+        "a2Variant": "outline",
+        "a2Size": "lg",
+        "a2Leading": "false",
+        "a2Trailing": "false",
+        "a2Danger": false,
+        "a2Loading": false,
+        "a2Disabled": false,
+        "a3": true,
+        "a3Text": "Mégse",
+        "a3Variant": "clean",
+        "a3Size": "lg",
+        "a3Leading": "false",
+        "a3Trailing": "false",
+        "a3Danger": false,
+        "a3Loading": false,
+        "a3Disabled": false
+      }
+    },
+    "PatternHeader": {
+      "story": "Patterns/Header",
+      "argTypes": {
+        "variant": {
+          "control": "select",
+          "options": [
+            "Global",
+            "Form"
+          ]
+        },
+        "inverted": {
+          "control": "boolean"
+        },
+        "activePanel": {
+          "control": "select",
+          "options": [
+            "None",
+            "Menu",
+            "Search"
+          ]
+        },
+        "showSearch": {
+          "control": "boolean"
+        },
+        "showLang": {
+          "control": "boolean"
+        },
+        "showLogout": {
+          "control": "boolean"
+        },
+        "langText": {
+          "control": "text"
+        },
+        "logoutText": {
+          "control": "text"
+        }
+      },
+      "args": {
+        "variant": "Global",
+        "inverted": false,
+        "activePanel": "None",
+        "showSearch": true,
+        "showLang": true,
+        "showLogout": true,
+        "langText": "EN",
+        "logoutText": "Kijelentkezés"
+      }
+    },
+    "PatternHero": {
+      "story": "Patterns/Hero",
+      "argTypes": {
+        "layout": {
+          "control": "select",
+          "options": [
+            "content",
+            "search"
+          ]
+        },
+        "inverted": {
+          "control": "boolean"
+        },
+        "title": {
+          "control": "text"
+        },
+        "body": {
+          "control": "text"
+        },
+        "showShare": {
+          "control": "boolean"
+        },
+        "showPrint": {
+          "control": "boolean"
+        },
+        "cta": {
+          "control": "boolean"
+        },
+        "ctaText": {
+          "control": "text"
+        },
+        "ctaVariant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "outline-inverted",
+            "subtle-inverted",
+            "primary-inverted"
+          ]
+        },
+        "secondaryCta": {
+          "control": "boolean"
+        },
+        "secondaryCtaText": {
+          "control": "text"
+        },
+        "secondaryCtaVariant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "outline-inverted",
+            "subtle-inverted",
+            "primary-inverted"
+          ]
+        },
+        "illustration": {
+          "control": "boolean"
+        },
+        "resolution": {
+          "control": "select",
+          "options": [
+            "1024-",
+            "640-1024",
+            "320-640"
+          ]
+        }
+      },
+      "args": {
+        "layout": "content",
+        "inverted": true,
+        "title": "Elvesztettem a munkámat",
+        "body": "Ha elvesztetted a munkádat, nálunk online elkezdheted az álláskeresőként történő regisztrációt és az álláskeresési járadék igénylésének előkészítését.",
+        "showShare": true,
+        "showPrint": true,
+        "cta": true,
+        "ctaText": "Regisztráció indítása",
+        "ctaVariant": "outline-inverted",
+        "secondaryCta": false,
+        "secondaryCtaText": "Secondary action",
+        "secondaryCtaVariant": "subtle-inverted",
+        "illustration": true,
+        "resolution": "1024-"
+      }
     }
   },
   "unmatchedTitles": []
