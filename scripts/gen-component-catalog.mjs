@@ -187,6 +187,12 @@ const overlayControl = (c) =>
   : c === "number" || c === "range" ? "number"
   : "text"; // text | color | inline-radio(without options) | unknown
 
+// Core authoring text props always kept editable (from the .d.ts base) even when
+// a story overlay curates a narrower control set — so a component authored as a
+// ds: node can always edit its label / placeholder / description / title, which
+// the field-types treat as first-class. (Value is runtime, not authored here.)
+const ALWAYS_TEXT_PROPS = ["label", "placeholder", "description", "title"];
+
 /** Merge one component's .d.ts base with its Storybook argTypes overlay. */
 function mergedProps(name) {
   const base = propModel(name);
@@ -207,6 +213,13 @@ function mergedProps(name) {
     if (prop in args) entry.default = args[prop];
     else if ("default" in b) entry.default = b.default;
     props[prop] = entry;
+  }
+  // Keep the core text props editable even if the story omitted them.
+  for (const p of ALWAYS_TEXT_PROPS) {
+    if (!(p in props) && base[p]) {
+      props[p] = { ...base[p] };
+      if (p in args) props[p].default = args[p];
+    }
   }
   return { props, source: "storybook" };
 }

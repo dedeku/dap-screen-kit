@@ -102,6 +102,14 @@
         "trailingIcon": {
           "type": "string",
           "control": "text"
+        },
+        "label": {
+          "type": "string",
+          "control": "text"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -184,6 +192,11 @@
         "closeable": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "title": {
+          "type": "string",
+          "control": "text",
+          "default": "Fontos tudnivaló"
         }
       }
     },
@@ -280,6 +293,15 @@
           "type": "boolean",
           "control": "boolean",
           "default": false
+        },
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Teljes név"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -503,6 +525,20 @@
           "control": "text"
         },
         "trailingIcon": {
+          "type": "string",
+          "control": "text"
+        },
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Email"
+        },
+        "placeholder": {
+          "type": "string",
+          "control": "text",
+          "default": "you@example.gov.hu"
+        },
+        "description": {
           "type": "string",
           "control": "text"
         }
@@ -737,6 +773,15 @@
         "readonly": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Elfogadom az adatkezelési tájékoztatót"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -764,6 +809,10 @@
         "disabled": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -830,6 +879,15 @@
         "loading": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Születési dátum"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -870,6 +928,14 @@
             "manual"
           ],
           "default": "none"
+        },
+        "label": {
+          "type": "string",
+          "control": "text"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -1004,6 +1070,15 @@
         "native": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Vármegye"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -1076,6 +1151,15 @@
           "type": "boolean",
           "control": "boolean",
           "default": false
+        },
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Értesítési csatorna"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -1178,6 +1262,10 @@
         "noPadding": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "title": {
+          "type": "string",
+          "control": "text"
         }
       }
     },
@@ -1216,6 +1304,16 @@
         "hideCancelButton": {
           "type": "boolean",
           "control": "boolean"
+        },
+        "description": {
+          "type": "string",
+          "control": "text",
+          "default": "Kérjük, ellenőrizze az adatokat a folytatás előtt."
+        },
+        "title": {
+          "type": "string",
+          "control": "text",
+          "default": "Ügyintézés megerősítése"
         }
       }
     },
