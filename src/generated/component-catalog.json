@@ -3,7 +3,7 @@
   "generatedFrom": "dap-design-system@0.56.8",
   "overlay": {
     "source": "storybook-csf",
-    "components": 25
+    "components": 26
   },
   "components": {
     "DapDSButton": {
@@ -1356,6 +1356,25 @@
           "type": "string",
           "control": "text",
           "default": "© 2025"
+        }
+      }
+    },
+    "PatternStepper": {
+      "kebab": null,
+      "label": "Stepper (pattern)",
+      "slot": "none",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Menü"
+        },
+        "showRail": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
         }
       }
     },

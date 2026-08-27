@@ -13,7 +13,7 @@ export { default as renderComponentNode, resolveComponent } from "./render/Compo
 // composed page patterns (Hero/Header/CtaRow). The components live under the
 // "@dap/screen-kit/patterns" subpath to avoid clashing with the render Header
 // above; the root only re-exports the registry helpers.
-export { PATTERNS, getPattern, isPattern } from "./patterns/index.jsx";
+export { PATTERNS, getPattern, isPattern, FlowContext } from "./patterns/index.jsx";
 
 // schema (field-type catalog, visibleWhen predicate, JSON typedefs)
 export * from "./schema/index.js";
