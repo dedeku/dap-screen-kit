@@ -1,6 +1,6 @@
 {
   "name": "@dap/screen-kit",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Common DAP screen runtime: single-source registry + <ScreenRenderer> over dap-design-system. One render path shared by the form-builder, the life-event flows, the player and Storybook.",
   "license": "UNLICENSED",
   "private": true,
@@ -13,6 +13,9 @@
     },
     "./schema": {
       "import": "./dist/schema/index.js"
+    },
+    "./patterns": {
+      "import": "./dist/patterns/index.js"
     },
     "./field-schema.json": "./src/generated/field-schema.json",
     "./component-catalog.json": "./src/generated/component-catalog.json"

@@ -3,13 +3,14 @@
   "generatedFrom": "dap-design-system@0.56.8",
   "overlay": {
     "source": "storybook-csf",
-    "components": 21
+    "components": 24
   },
   "components": {
     "DapDSButton": {
       "kebab": "dap-ds-button",
       "label": "Button",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "variant": {
@@ -108,6 +109,7 @@
       "kebab": "dap-ds-icon-button",
       "label": "Icon button",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "variant": {
@@ -146,6 +148,7 @@
       "kebab": "dap-ds-callout",
       "label": "Callout",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "variant": {
@@ -188,6 +191,7 @@
       "kebab": "dap-ds-link",
       "label": "Link",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "variant": {
@@ -243,6 +247,7 @@
       "kebab": "dap-ds-label",
       "label": "Label",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -282,6 +287,7 @@
       "kebab": "dap-ds-typography",
       "label": "Typography",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "variant": {
@@ -324,6 +330,7 @@
       "kebab": "dap-ds-feedback",
       "label": "Feedback",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "feedbackType": {
@@ -362,6 +369,7 @@
       "kebab": "dap-ds-divider",
       "label": "Divider",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "spacing": {
@@ -384,6 +392,7 @@
       "kebab": "dap-ds-input",
       "label": "Input",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "type": {
@@ -503,6 +512,7 @@
       "kebab": "dap-ds-checkbox",
       "label": "Checkbox",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "type": {
@@ -613,6 +623,7 @@
       "kebab": "dap-ds-datepicker",
       "label": "Date picker",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -678,6 +689,7 @@
       "kebab": "dap-ds-search",
       "label": "Search",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -717,6 +729,7 @@
       "kebab": "dap-ds-select",
       "label": "Select",
       "slot": "options",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -796,6 +809,7 @@
       "kebab": "dap-ds-radio-group",
       "label": "Radio group",
       "slot": "options",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -867,6 +881,7 @@
       "kebab": "dap-ds-navigation-menu",
       "label": "Navigation menu",
       "slot": "options",
+      "kind": null,
       "source": "storybook",
       "props": {
         "orientation": {
@@ -901,6 +916,7 @@
       "kebab": "dap-ds-breadcrumb",
       "label": "Breadcrumb",
       "slot": "options",
+      "kind": null,
       "source": "storybook",
       "props": {
         "mobile": {
@@ -913,6 +929,7 @@
       "kebab": "dap-ds-list-item",
       "label": "List item",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "variant": {
@@ -966,6 +983,7 @@
       "kebab": "dap-ds-modal",
       "label": "Modal",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -1003,6 +1021,7 @@
       "kebab": "dap-ds-popup",
       "label": "Popup",
       "slot": "text",
+      "kind": null,
       "source": "storybook",
       "props": {
         "placement": {
@@ -1060,6 +1079,7 @@
       "kebab": "dap-ds-stack",
       "label": "Stack",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "direction": {
@@ -1087,6 +1107,7 @@
       "kebab": "dap-ds-toc",
       "label": "TOC",
       "slot": "none",
+      "kind": null,
       "source": "storybook",
       "props": {
         "size": {
@@ -1107,6 +1128,427 @@
         "header": {
           "type": "string",
           "control": "text"
+        }
+      }
+    },
+    "PatternHeader": {
+      "kebab": null,
+      "label": "Header (pattern)",
+      "slot": "none",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "variant": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "Global",
+            "Form"
+          ],
+          "default": "Global"
+        },
+        "inverted": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "activePanel": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "None",
+            "Menu",
+            "Search"
+          ],
+          "default": "None"
+        },
+        "showSearch": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "showLang": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "showLogout": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "langText": {
+          "type": "string",
+          "control": "text",
+          "default": "EN"
+        },
+        "logoutText": {
+          "type": "string",
+          "control": "text",
+          "default": "Kijelentkezés"
+        }
+      }
+    },
+    "PatternHero": {
+      "kebab": null,
+      "label": "Hero (pattern)",
+      "slot": "none",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "layout": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "content",
+            "search"
+          ],
+          "default": "content"
+        },
+        "inverted": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "title": {
+          "type": "string",
+          "control": "text",
+          "default": "Elvesztettem a munkámat"
+        },
+        "body": {
+          "type": "string",
+          "control": "text",
+          "default": "Ha elvesztetted a munkádat, nálunk online elkezdheted az álláskeresőként történő regisztrációt és az álláskeresési járadék igénylésének előkészítését."
+        },
+        "showShare": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "showPrint": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "cta": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "ctaText": {
+          "type": "string",
+          "control": "text",
+          "default": "Regisztráció indítása"
+        },
+        "ctaVariant": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "outline-inverted",
+            "subtle-inverted",
+            "primary-inverted"
+          ],
+          "default": "outline-inverted"
+        },
+        "secondaryCta": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "secondaryCtaText": {
+          "type": "string",
+          "control": "text",
+          "default": "Secondary action"
+        },
+        "secondaryCtaVariant": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "outline-inverted",
+            "subtle-inverted",
+            "primary-inverted"
+          ],
+          "default": "subtle-inverted"
+        },
+        "illustration": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "resolution": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "1024-",
+            "640-1024",
+            "320-640"
+          ],
+          "default": "1024-"
+        }
+      }
+    },
+    "PatternCtaRow": {
+      "kebab": null,
+      "label": "CTA Row (pattern)",
+      "slot": "none",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "align": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "start",
+            "center",
+            "end",
+            "between"
+          ],
+          "default": "start"
+        },
+        "orientation": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "row",
+            "column"
+          ],
+          "default": "row"
+        },
+        "reverse": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "divider": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "fullBleed": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "maxWidth": {
+          "type": "number",
+          "control": "number",
+          "default": 720
+        },
+        "a1": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "a1Text": {
+          "type": "string",
+          "control": "text",
+          "default": "Kitöltés folytatása"
+        },
+        "a1Variant": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "subtle-neutral",
+            "subtle-quiet",
+            "subtle-menu",
+            "subtle-menu-item",
+            "primary-inverted",
+            "outline-inverted",
+            "subtle-inverted",
+            "clean-inverted",
+            "subtle-quiet-inverted"
+          ],
+          "default": "primary"
+        },
+        "a1Size": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "lg",
+            "md",
+            "sm",
+            "xs"
+          ],
+          "default": "lg"
+        },
+        "a1Leading": {
+          "type": "string",
+          "control": "text",
+          "default": "false"
+        },
+        "a1Trailing": {
+          "type": "string",
+          "control": "text",
+          "default": "arrow-right-line"
+        },
+        "a1Danger": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a1Loading": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a1Disabled": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a2": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "a2Text": {
+          "type": "string",
+          "control": "text",
+          "default": "Kérelem benyújtása"
+        },
+        "a2Variant": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "subtle-neutral",
+            "subtle-quiet",
+            "subtle-menu",
+            "subtle-menu-item",
+            "primary-inverted",
+            "outline-inverted",
+            "subtle-inverted",
+            "clean-inverted",
+            "subtle-quiet-inverted"
+          ],
+          "default": "outline"
+        },
+        "a2Size": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "lg",
+            "md",
+            "sm",
+            "xs"
+          ],
+          "default": "lg"
+        },
+        "a2Leading": {
+          "type": "string",
+          "control": "text",
+          "default": "false"
+        },
+        "a2Trailing": {
+          "type": "string",
+          "control": "text",
+          "default": "false"
+        },
+        "a2Danger": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a2Loading": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a2Disabled": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a3": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "a3Text": {
+          "type": "string",
+          "control": "text",
+          "default": "Mégse"
+        },
+        "a3Variant": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "primary",
+            "outline",
+            "subtle",
+            "clean",
+            "subtle-neutral",
+            "subtle-quiet",
+            "subtle-menu",
+            "subtle-menu-item",
+            "primary-inverted",
+            "outline-inverted",
+            "subtle-inverted",
+            "clean-inverted",
+            "subtle-quiet-inverted"
+          ],
+          "default": "clean"
+        },
+        "a3Size": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "lg",
+            "md",
+            "sm",
+            "xs"
+          ],
+          "default": "lg"
+        },
+        "a3Leading": {
+          "type": "string",
+          "control": "text",
+          "default": "false"
+        },
+        "a3Trailing": {
+          "type": "string",
+          "control": "text",
+          "default": "false"
+        },
+        "a3Danger": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a3Loading": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "a3Disabled": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
         }
       }
     }

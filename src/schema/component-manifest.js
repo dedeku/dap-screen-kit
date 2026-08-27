@@ -64,6 +64,15 @@ export const CATALOG_COMPONENTS = [
   // is normally driven from page headings — not authorable as a value/label list,
   // so it is a plain (no-children) node here.
   { name: "DapDSTOC",            label: "TOC",             story: "Components/TOC",            slot: "none" },
+
+  // ── Patterns (kind: "pattern") ────────────────────────────────────────────
+  // Composed, arg-driven page patterns — NOT single DS components. Their React
+  // implementation lives in src/patterns/ (the PATTERNS registry); the renderer
+  // resolves them from there. No .d.ts base — their whole prop schema comes from
+  // the Storybook argTypes overlay. slot "none" (arg-driven, no children).
+  { name: "PatternHeader",  label: "Header (pattern)",  story: "Patterns/Header",  slot: "none", kind: "pattern" },
+  { name: "PatternHero",    label: "Hero (pattern)",    story: "Patterns/Hero",    slot: "none", kind: "pattern" },
+  { name: "PatternCtaRow",  label: "CTA Row (pattern)", story: "Patterns/CTA Row", slot: "none", kind: "pattern" },
 ];
 
 /** Base React export names in the manifest (e.g. "DapDSButton"). */

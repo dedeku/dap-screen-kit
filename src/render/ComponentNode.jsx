@@ -1,6 +1,7 @@
 import React from "react";
 import * as DS from "dap-design-system/react";
 import { getComponentSlot, getComponentItem } from "../schema/component-catalog.js";
+import { getPattern } from "../patterns/index.jsx";
 
 /**
  * Generic DS-component node renderer — the counterpart to registry/index.jsx's
@@ -22,9 +23,13 @@ import { getComponentSlot, getComponentItem } from "../schema/component-catalog.
 
 const isEmpty = (v) => v === "" || v == null;
 
-/** Resolve the DS React component for a catalog base name, or null. */
+/**
+ * Resolve the component for a catalog base name: a composed PATTERN (Hero/Header/
+ * CtaRow) if registered, else the real DS React export. Patterns render like any
+ * other node — arg-driven props, slot "none" (no children).
+ */
 export function resolveComponent(name) {
-  return DS[`${name}React`] || null;
+  return getPattern(name) || DS[`${name}React`] || null;
 }
 
 /** Clean a props object for spreading onto a DS component (drop empties). */

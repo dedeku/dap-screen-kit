@@ -7,6 +7,7 @@ export default defineConfig({
   entry: {
     index: "src/index.js",
     "schema/index": "src/schema/index.js",
+    "patterns/index": "src/patterns/index.jsx",
   },
   format: ["esm"],
   target: "es2020",
