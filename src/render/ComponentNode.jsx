@@ -82,6 +82,14 @@ export function renderComponentNode(node, ctx) {
   const slot = node.slot || getComponentSlot(node.component);
   const props = cleanProps(node.props);
 
+  // Patterns render their own item lists (cleanProps strips `items`, and the
+  // generic renderOptions only builds DS child elements — a pattern has none).
+  const patternComp = getPattern(node.component);
+  if (patternComp) {
+    const items = node.props?.items ?? node.items;
+    if (items !== undefined) props.items = items;
+  }
+
   // Controlled value wiring (runtime only). Input DS components use their value
   // prop + change event; value PATTERNS get { value, onChange } as props and
   // manage the value themselves.
