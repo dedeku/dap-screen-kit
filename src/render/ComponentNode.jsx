@@ -1,6 +1,6 @@
 import React from "react";
 import * as DS from "dap-design-system/react";
-import { getComponentSlot } from "../schema/component-catalog.js";
+import { getComponentSlot, getComponentItem } from "../schema/component-catalog.js";
 
 /**
  * Generic DS-component node renderer — the counterpart to registry/index.jsx's
@@ -20,15 +20,6 @@ import { getComponentSlot } from "../schema/component-catalog.js";
  * all reach the same DS component the same way.
  */
 
-const OPTION_EL = {
-  // component base name -> [wrapperUnused, the DS React child element to slot per option]
-  DapDSSelect: "DapDSOptionItemReact",
-  DapDSRadioGroup: "DapDSRadioButtonReact",
-  DapDSNavigationMenu: "DapDSNavigationMenuItemReact",
-  DapDSBreadcrumb: "DapDSBreadcrumbItemReact",
-  DapDSTOC: "DapDSTOCItemReact",
-};
-
 const isEmpty = (v) => v === "" || v == null;
 
 /** Resolve the DS React component for a catalog base name, or null. */
@@ -47,14 +38,25 @@ function cleanProps(props = {}) {
   return out;
 }
 
-/** Render slotted option children for "options"-slot components, if any. */
+/**
+ * Render slotted option children per the component's item spec (getComponentItem):
+ * each item object maps to the child element with `props` filled from item keys
+ * and, if `text` is set, the item's text as children. Matches each child's real
+ * DS API (Select→value+text, Radio→value+label props, Breadcrumb→href+text, …).
+ */
 function renderOptions(name, items) {
-  const childName = OPTION_EL[name];
-  const Child = childName && DS[childName];
+  const spec = getComponentItem(name);
+  const Child = spec?.el && DS[`${spec.el}React`];
   if (!Child || !Array.isArray(items)) return null;
-  return items.map((it, i) =>
-    React.createElement(Child, { key: it.id ?? i, value: it.value ?? it.id ?? String(i) }, it.label ?? String(it.value ?? i)),
-  );
+  return items.map((it, i) => {
+    const childProps = { key: it.id ?? i };
+    for (const [childProp, itemKey] of Object.entries(spec.props || {})) {
+      const v = it[itemKey];
+      if (!isEmpty(v)) childProps[childProp] = v;
+    }
+    const text = spec.text ? it[spec.text] : undefined;
+    return React.createElement(Child, childProps, isEmpty(text) ? undefined : text);
+  });
 }
 
 /**

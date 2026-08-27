@@ -1086,7 +1086,7 @@
     "DapDSTOC": {
       "kebab": "dap-ds-toc",
       "label": "TOC",
-      "slot": "options",
+      "slot": "none",
       "source": "storybook",
       "props": {
         "size": {
