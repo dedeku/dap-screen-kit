@@ -12,12 +12,14 @@
 
 import Hero, { HERO_RESOLUTIONS, HERO_CTA_VARIANTS } from "./Hero.jsx";
 import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 import CtaRow, { CTA_VARIANTS, CTA_SIZES } from "./CtaRow.jsx";
 
 /** Pattern base name -> React component. */
 export const PATTERNS = {
   PatternHero: Hero,
   PatternHeader: Header,
+  PatternFooter: Footer,
   PatternCtaRow: CtaRow,
 };
 
@@ -31,4 +33,4 @@ export function isPattern(name) {
   return Object.prototype.hasOwnProperty.call(PATTERNS, name);
 }
 
-export { Hero, Header, CtaRow, HERO_RESOLUTIONS, HERO_CTA_VARIANTS, CTA_VARIANTS, CTA_SIZES };
+export { Hero, Header, Footer, CtaRow, HERO_RESOLUTIONS, HERO_CTA_VARIANTS, CTA_VARIANTS, CTA_SIZES };

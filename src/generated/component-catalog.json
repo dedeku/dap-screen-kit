@@ -3,7 +3,7 @@
   "generatedFrom": "dap-design-system@0.56.8",
   "overlay": {
     "source": "storybook-csf",
-    "components": 24
+    "components": 25
   },
   "components": {
     "DapDSButton": {
@@ -1292,6 +1292,70 @@
             "320-640"
           ],
           "default": "1024-"
+        }
+      }
+    },
+    "PatternFooter": {
+      "kebab": null,
+      "label": "Footer (pattern)",
+      "slot": "none",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "helpTitle": {
+          "type": "string",
+          "control": "text",
+          "default": "Segítség"
+        },
+        "phoneHu": {
+          "type": "string",
+          "control": "text",
+          "default": "1818"
+        },
+        "phoneIntl": {
+          "type": "string",
+          "control": "text",
+          "default": "+36 1 550 1858"
+        },
+        "email": {
+          "type": "string",
+          "control": "text",
+          "default": "1818@1818.hu"
+        },
+        "helpButtonText": {
+          "type": "string",
+          "control": "text",
+          "default": "Súgóközpont"
+        },
+        "showApp": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "appTitle": {
+          "type": "string",
+          "control": "text",
+          "default": "Töltsd le a Digitális Állampolgár mobilalkalmazást!"
+        },
+        "programTitle": {
+          "type": "string",
+          "control": "text",
+          "default": "Digitális Állampolgárság Program"
+        },
+        "showLegal": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": true
+        },
+        "copyright": {
+          "type": "string",
+          "control": "text",
+          "default": "© 2025"
         }
       }
     },
