@@ -3,7 +3,7 @@
   "generatedFrom": "dap-design-system@0.56.8",
   "overlay": {
     "source": "storybook-csf",
-    "components": 26
+    "components": 30
   },
   "components": {
     "DapDSButton": {
@@ -508,6 +508,127 @@
         }
       }
     },
+    "DapDSNumberInput": {
+      "kebab": "dap-ds-number-input",
+      "label": "Number input",
+      "slot": "none",
+      "kind": null,
+      "source": "storybook",
+      "props": {
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Összeg"
+        },
+        "placeholder": {
+          "type": "string",
+          "control": "text",
+          "default": "0"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
+        },
+        "size": {
+          "type": "Size",
+          "control": "select",
+          "enum": [
+            "xxl",
+            "xl",
+            "lg",
+            "md",
+            "sm",
+            "xs",
+            "xxs"
+          ],
+          "default": "sm"
+        },
+        "min": {
+          "type": "number",
+          "control": "number"
+        },
+        "max": {
+          "type": "number",
+          "control": "number"
+        },
+        "step": {
+          "type": "number",
+          "control": "number"
+        },
+        "required": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "optional": {
+          "type": "boolean",
+          "control": "boolean"
+        },
+        "disabled": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        },
+        "readonly": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
+        }
+      }
+    },
+    "DapDSTextarea": {
+      "kebab": "dap-ds-textarea",
+      "label": "Textarea",
+      "slot": "none",
+      "kind": null,
+      "source": "storybook",
+      "props": {
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Megjegyzés"
+        },
+        "placeholder": {
+          "type": "string",
+          "control": "text",
+          "default": "Írj ide…"
+        },
+        "description": {
+          "type": "string",
+          "control": "text"
+        },
+        "rows": {
+          "type": "number",
+          "control": "number"
+        },
+        "size": {
+          "type": "Size",
+          "control": "select",
+          "enum": [
+            "lg",
+            "md",
+            "sm"
+          ],
+          "default": "md"
+        },
+        "required": {
+          "type": "boolean",
+          "control": "boolean"
+        },
+        "optional": {
+          "type": "boolean",
+          "control": "boolean"
+        },
+        "disabled": {
+          "type": "boolean",
+          "control": "boolean"
+        },
+        "readonly": {
+          "type": "boolean",
+          "control": "boolean"
+        }
+      }
+    },
     "DapDSCheckbox": {
       "kebab": "dap-ds-checkbox",
       "label": "Checkbox",
@@ -619,6 +740,33 @@
         }
       }
     },
+    "DapDSSwitch": {
+      "kebab": "dap-ds-switch",
+      "label": "Switch",
+      "slot": "none",
+      "kind": null,
+      "source": "storybook",
+      "props": {
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Értesítések"
+        },
+        "size": {
+          "type": "Size",
+          "control": "select",
+          "enum": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        },
+        "disabled": {
+          "type": "boolean",
+          "control": "boolean"
+        }
+      }
+    },
     "DapDSDatePicker": {
       "kebab": "dap-ds-datepicker",
       "label": "Date picker",
@@ -722,6 +870,29 @@
             "manual"
           ],
           "default": "none"
+        }
+      }
+    },
+    "DapDSContentSwitcher": {
+      "kebab": "dap-ds-content-switcher",
+      "label": "Content switcher",
+      "slot": "options",
+      "kind": null,
+      "source": "storybook",
+      "props": {
+        "size": {
+          "type": "string",
+          "control": "select",
+          "enum": [
+            "lg",
+            "md",
+            "sm"
+          ],
+          "default": "md"
+        },
+        "disabled": {
+          "type": "boolean",
+          "control": "boolean"
         }
       }
     },
