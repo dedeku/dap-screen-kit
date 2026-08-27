@@ -1367,6 +1367,22 @@
         "illustration": true,
         "resolution": "1024-"
       }
+    },
+    "PatternStepper": {
+      "story": "Patterns/Stepper",
+      "argTypes": {
+        "label": {
+          "control": "text"
+        },
+        "showRail": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "label": "Menü",
+        "showRail": true,
+        "current": "szemelyes"
+      }
     }
   },
   "unmatchedTitles": []

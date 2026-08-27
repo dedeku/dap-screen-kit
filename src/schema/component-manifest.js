@@ -73,6 +73,7 @@ export const CATALOG_COMPONENTS = [
   { name: "PatternHeader",  label: "Header (pattern)",  story: "Patterns/Header",  slot: "none", kind: "pattern" },
   { name: "PatternHero",    label: "Hero (pattern)",    story: "Patterns/Hero",    slot: "none", kind: "pattern" },
   { name: "PatternFooter",  label: "Footer (pattern)",  story: "Patterns/Footer",  slot: "none", kind: "pattern" },
+  { name: "PatternStepper", label: "Stepper (pattern)", story: "Patterns/Stepper", slot: "none", kind: "pattern" },
   { name: "PatternCtaRow",  label: "CTA Row (pattern)", story: "Patterns/CTA Row", slot: "none", kind: "pattern" },
 ];
 
