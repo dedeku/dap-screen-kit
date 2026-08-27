@@ -18,6 +18,7 @@ import Timeline from "./Timeline.jsx";
 import DataList from "./DataList.jsx";
 import Checklist from "./Checklist.jsx";
 import ChipGroup from "./ChipGroup.jsx";
+import Repeatable from "./Repeatable.jsx";
 import CtaRow, { CTA_VARIANTS, CTA_SIZES } from "./CtaRow.jsx";
 import { FlowContext } from "./FlowContext.js";
 
@@ -31,6 +32,7 @@ export const PATTERNS = {
   PatternDataList: DataList,
   PatternChecklist: Checklist,
   PatternChipGroup: ChipGroup,
+  PatternRepeatable: Repeatable,
   PatternCtaRow: CtaRow,
 };
 
@@ -44,4 +46,4 @@ export function isPattern(name) {
   return Object.prototype.hasOwnProperty.call(PATTERNS, name);
 }
 
-export { Hero, Header, Footer, Stepper, Timeline, DataList, Checklist, ChipGroup, CtaRow, FlowContext, HERO_RESOLUTIONS, HERO_CTA_VARIANTS, CTA_VARIANTS, CTA_SIZES };
+export { Hero, Header, Footer, Stepper, Timeline, DataList, Checklist, ChipGroup, Repeatable, CtaRow, FlowContext, HERO_RESOLUTIONS, HERO_CTA_VARIANTS, CTA_VARIANTS, CTA_SIZES };
