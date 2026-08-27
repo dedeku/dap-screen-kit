@@ -72,6 +72,7 @@ export const CATALOG_COMPONENTS = [
   // the Storybook argTypes overlay. slot "none" (arg-driven, no children).
   { name: "PatternHeader",  label: "Header (pattern)",  story: "Patterns/Header",  slot: "none", kind: "pattern" },
   { name: "PatternHero",    label: "Hero (pattern)",    story: "Patterns/Hero",    slot: "none", kind: "pattern" },
+  { name: "PatternFooter",  label: "Footer (pattern)",  story: "Patterns/Footer",  slot: "none", kind: "pattern" },
   { name: "PatternCtaRow",  label: "CTA Row (pattern)", story: "Patterns/CTA Row", slot: "none", kind: "pattern" },
 ];
 

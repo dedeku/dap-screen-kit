@@ -1179,6 +1179,57 @@
         "a3Disabled": false
       }
     },
+    "PatternFooter": {
+      "story": "Patterns/Footer",
+      "argTypes": {
+        "inverted": {
+          "control": "boolean"
+        },
+        "helpTitle": {
+          "control": "text"
+        },
+        "phoneHu": {
+          "control": "text"
+        },
+        "phoneIntl": {
+          "control": "text"
+        },
+        "email": {
+          "control": "text"
+        },
+        "helpButtonText": {
+          "control": "text"
+        },
+        "showApp": {
+          "control": "boolean"
+        },
+        "appTitle": {
+          "control": "text"
+        },
+        "programTitle": {
+          "control": "text"
+        },
+        "showLegal": {
+          "control": "boolean"
+        },
+        "copyright": {
+          "control": "text"
+        }
+      },
+      "args": {
+        "inverted": false,
+        "helpTitle": "Segítség",
+        "phoneHu": "1818",
+        "phoneIntl": "+36 1 550 1858",
+        "email": "1818@1818.hu",
+        "helpButtonText": "Súgóközpont",
+        "showApp": true,
+        "appTitle": "Töltsd le a Digitális Állampolgár mobilalkalmazást!",
+        "programTitle": "Digitális Állampolgárság Program",
+        "showLegal": true,
+        "copyright": "© 2025"
+      }
+    },
     "PatternHeader": {
       "story": "Patterns/Header",
       "argTypes": {
