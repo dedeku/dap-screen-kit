@@ -229,6 +229,25 @@
         "label": "Elfogadom az adatkezelési tájékoztatót"
       }
     },
+    "DapDSContentSwitcher": {
+      "story": "Components/ContentSwitcher",
+      "argTypes": {
+        "size": {
+          "control": "select",
+          "options": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        },
+        "disabled": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "size": "md"
+      }
+    },
     "DapDSDatePicker": {
       "story": "Components/DatePicker",
       "argTypes": {
@@ -661,6 +680,57 @@
         "activeHref": "/ugyintezes"
       }
     },
+    "DapDSNumberInput": {
+      "story": "Components/NumberInput",
+      "argTypes": {
+        "label": {
+          "control": "text"
+        },
+        "placeholder": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "xxl",
+            "xl",
+            "lg",
+            "md",
+            "sm",
+            "xs",
+            "xxs"
+          ]
+        },
+        "min": {
+          "control": "number"
+        },
+        "max": {
+          "control": "number"
+        },
+        "step": {
+          "control": "number"
+        },
+        "required": {
+          "control": "boolean"
+        },
+        "optional": {
+          "control": "boolean"
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "readonly": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "label": "Összeg",
+        "placeholder": "0"
+      }
+    },
     "DapDSPopup": {
       "story": "Components/Popup",
       "argTypes": {
@@ -900,6 +970,28 @@
         "direction": "row"
       }
     },
+    "DapDSSwitch": {
+      "story": "Components/Switch",
+      "argTypes": {
+        "label": {
+          "control": "text"
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        },
+        "disabled": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "label": "Értesítések"
+      }
+    },
     "DapDSTOC": {
       "story": "Components/TOC",
       "argTypes": {
@@ -920,6 +1012,47 @@
         }
       },
       "args": {}
+    },
+    "DapDSTextarea": {
+      "story": "Components/Textarea",
+      "argTypes": {
+        "label": {
+          "control": "text"
+        },
+        "placeholder": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "rows": {
+          "control": "number"
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        },
+        "required": {
+          "control": "boolean"
+        },
+        "optional": {
+          "control": "boolean"
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "readonly": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "label": "Megjegyzés",
+        "placeholder": "Írj ide…"
+      }
     },
     "DapDSTypography": {
       "story": "Components/Typography",

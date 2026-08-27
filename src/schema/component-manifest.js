@@ -31,10 +31,11 @@
 //   props  — { childProp: itemKey } passed as child props
 // The renderer (render/ComponentNode.jsx) and the editor both read this, so a
 // child's prop shape lives in exactly one place.
-const SELECT_ITEM     = { el: "DapDSOptionItem",         fields: ["label", "value"], text: "label", props: { value: "value" } };
-const RADIO_ITEM      = { el: "DapDSRadioButton",        fields: ["label", "value"], props: { value: "value", label: "label" } }; // RadioButton takes label as a PROP, not children
-const NAV_ITEM        = { el: "DapDSNavigationMenuItem", fields: ["label"],          props: { label: "label" } };                 // NavigationMenuItem: label prop
-const BREADCRUMB_ITEM = { el: "DapDSBreadcrumbItem",     fields: ["label", "href"],  text: "label", props: { href: "href" } };   // BreadcrumbItem: href prop + text
+const SELECT_ITEM     = { el: "DapDSOptionItem",           fields: ["label", "value"], text: "label", props: { value: "value" } };
+const RADIO_ITEM      = { el: "DapDSRadioButton",          fields: ["label", "value"], props: { value: "value", label: "label" } }; // RadioButton takes label as a PROP, not children
+const NAV_ITEM        = { el: "DapDSNavigationMenuItem",   fields: ["label"],          props: { label: "label" } };                 // NavigationMenuItem: label prop
+const BREADCRUMB_ITEM = { el: "DapDSBreadcrumbItem",       fields: ["label", "href"],  text: "label", props: { href: "href" } };   // BreadcrumbItem: href prop + text
+const SWITCHER_ITEM   = { el: "DapDSContentSwitcherItem",  fields: ["label", "value"], text: "label", props: { value: "value" } }; // ContentSwitcherItem: value prop + text
 
 export const CATALOG_COMPONENTS = [
   { name: "DapDSButton",         label: "Button",          story: "Components/Button",         slot: "text" },
@@ -46,9 +47,13 @@ export const CATALOG_COMPONENTS = [
   { name: "DapDSFeedback",       label: "Feedback",        story: "Components/Feedback",       slot: "text" },
   { name: "DapDSDivider",        label: "Divider",         story: "Components/Divider",        slot: "none" },
   { name: "DapDSInput",          label: "Input",           story: "Components/Input",          slot: "none" },
+  { name: "DapDSNumberInput",    label: "Number input",    story: "Components/NumberInput",    slot: "none" },
+  { name: "DapDSTextarea",       label: "Textarea",        story: "Components/Textarea",       slot: "none" },
   { name: "DapDSCheckbox",       label: "Checkbox",        story: "Components/Checkbox",       slot: "none" },
+  { name: "DapDSSwitch",         label: "Switch",          story: "Components/Switch",         slot: "none" },
   { name: "DapDSDatePicker",     label: "Date picker",     story: "Components/DatePicker",     slot: "none" },
   { name: "DapDSSearch",         label: "Search",          story: "Components/Search",         slot: "none" },
+  { name: "DapDSContentSwitcher",label: "Content switcher",story: "Components/ContentSwitcher",slot: "options", item: SWITCHER_ITEM },
   // options-slot components declare an `item` spec (below) so the renderer and the
   // builder's option-list editor agree on the child element + which item fields
   // map to child props vs. text.
