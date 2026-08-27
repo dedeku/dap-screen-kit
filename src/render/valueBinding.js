@@ -11,20 +11,38 @@
 //   read   : event -> next value
 
 export const VALUE_BINDINGS = {
-  DapDSInput:           { prop: "value",   event: "onDdsInput",  read: (e) => e?.target?.value },
-  DapDSNumberInput:     { prop: "value",   event: "onDdsInput",  read: (e) => e?.target?.value },
-  DapDSTextarea:        { prop: "value",   event: "onDdsInput",  read: (e) => e?.target?.value },
-  DapDSSearch:          { prop: "value",   event: "onDdsInput",  read: (e) => e?.target?.value },
-  DapDSDatePicker:      { prop: "value",   event: "onDdsChange", read: (e) => e?.target?.value },
-  DapDSSelect:          { prop: "value",   event: "onDdsChange", read: (e) => e?.target?.value },
-  DapDSRadioGroup:      { prop: "value",   event: "onDdsChange", read: (e) => e?.target?.value },
-  DapDSContentSwitcher: { prop: "value",   event: "onDdsChange", read: (e) => e?.target?.value },
-  DapDSCheckbox:        { prop: "checked", event: "onDdsChange", read: (e) => e?.target?.checked },
-  DapDSSwitch:          { prop: "checked", event: "onDdsChange", read: (e) => e?.target?.checked },
+  DapDSInput:           { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
+  DapDSNumberInput:     { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
+  DapDSTextarea:        { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
+  DapDSSearch:          { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
+  DapDSDatePicker:      { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
+  DapDSSelect:          { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
+  DapDSRadioGroup:      { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
+  DapDSContentSwitcher: { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
+  DapDSCheckbox:        { prop: "checked", event: "onDdsChange",     read: (e) => e?.target?.checked },
+  DapDSSwitch:          { prop: "checked", event: "onDdsChange",     read: (e) => e?.target?.checked },
+  // write-only: no value prop to reflect back; captures file names on change.
+  DapDSFileInput:       { prop: null,      event: "onDdsFileChange", read: (e) => (e?.detail?.files || []).map((f) => f.name) },
 };
 
-/** True if a catalog component is a value-bearing input (captures form data). */
-export const isValueComponent = (name) => Object.prototype.hasOwnProperty.call(VALUE_BINDINGS, name);
+// Value-bearing composed PATTERNS (no single DS component): they manage the
+// value themselves and receive { value, onChange } as props. Multi-value ones
+// hold an array of selected option ids.
+export const VALUE_PATTERNS = {
+  PatternChecklist: { multi: true },
+  PatternChipGroup: { multi: true },
+};
 
-/** The default value shape for an input component (booleans start false). */
-export const emptyValueFor = (name) => (VALUE_BINDINGS[name]?.prop === "checked" ? false : "");
+/** True if a catalog entry captures form data (input component OR value pattern). */
+export const isValueComponent = (name) =>
+  Object.prototype.hasOwnProperty.call(VALUE_BINDINGS, name) ||
+  Object.prototype.hasOwnProperty.call(VALUE_PATTERNS, name);
+
+/** True if a value entry holds an array (multi-select). */
+export const isMultiValue = (name) => !!VALUE_PATTERNS[name]?.multi;
+
+/** The default value shape for a value entry (booleans false, multi [], else ""). */
+export const emptyValueFor = (name) => {
+  if (VALUE_PATTERNS[name]?.multi) return [];
+  return VALUE_BINDINGS[name]?.prop === "checked" ? false : "";
+};

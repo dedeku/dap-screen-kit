@@ -358,6 +358,30 @@
         "feedbackType": "negative"
       }
     },
+    "DapDSFileInput": {
+      "story": "Components/FileInput",
+      "argTypes": {
+        "label": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "accept": {
+          "control": "text"
+        },
+        "multiple": {
+          "control": "boolean"
+        },
+        "disabled": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "label": "Dokumentum",
+        "description": "Húzd ide a fájlt, vagy tallózz."
+      }
+    },
     "DapDSIconButton": {
       "story": "Components/IconButton",
       "argTypes": {
@@ -1312,6 +1336,33 @@
         "a3Disabled": false
       }
     },
+    "PatternChecklist": {
+      "story": "Patterns/Checklist",
+      "argTypes": {},
+      "args": {}
+    },
+    "PatternChipGroup": {
+      "story": "Patterns/Chip Group",
+      "argTypes": {
+        "multiple": {
+          "control": "boolean"
+        }
+      },
+      "args": {
+        "multiple": false
+      }
+    },
+    "PatternDataList": {
+      "story": "Patterns/Data List",
+      "argTypes": {
+        "editHint": {
+          "control": "text"
+        }
+      },
+      "args": {
+        "editHint": "Az adatok a DÁP-profilodból származnak."
+      }
+    },
     "PatternFooter": {
       "story": "Patterns/Footer",
       "argTypes": {
@@ -1516,6 +1567,11 @@
         "showRail": true,
         "current": "szemelyes"
       }
+    },
+    "PatternTimeline": {
+      "story": "Patterns/Timeline",
+      "argTypes": {},
+      "args": {}
     }
   },
   "unmatchedTitles": []

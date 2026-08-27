@@ -14,6 +14,10 @@ import Hero, { HERO_RESOLUTIONS, HERO_CTA_VARIANTS } from "./Hero.jsx";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Stepper from "./Stepper.jsx";
+import Timeline from "./Timeline.jsx";
+import DataList from "./DataList.jsx";
+import Checklist from "./Checklist.jsx";
+import ChipGroup from "./ChipGroup.jsx";
 import CtaRow, { CTA_VARIANTS, CTA_SIZES } from "./CtaRow.jsx";
 import { FlowContext } from "./FlowContext.js";
 
@@ -23,6 +27,10 @@ export const PATTERNS = {
   PatternHeader: Header,
   PatternFooter: Footer,
   PatternStepper: Stepper,
+  PatternTimeline: Timeline,
+  PatternDataList: DataList,
+  PatternChecklist: Checklist,
+  PatternChipGroup: ChipGroup,
   PatternCtaRow: CtaRow,
 };
 
@@ -36,4 +44,4 @@ export function isPattern(name) {
   return Object.prototype.hasOwnProperty.call(PATTERNS, name);
 }
 
-export { Hero, Header, Footer, Stepper, CtaRow, FlowContext, HERO_RESOLUTIONS, HERO_CTA_VARIANTS, CTA_VARIANTS, CTA_SIZES };
+export { Hero, Header, Footer, Stepper, Timeline, DataList, Checklist, ChipGroup, CtaRow, FlowContext, HERO_RESOLUTIONS, HERO_CTA_VARIANTS, CTA_VARIANTS, CTA_SIZES };
