@@ -82,11 +82,18 @@ export function renderComponentNode(node, ctx) {
   const slot = node.slot || getComponentSlot(node.component);
   const props = cleanProps(node.props);
 
-  // Controlled value wiring for input components (runtime only).
+  // Controlled value wiring (runtime only). Input DS components use their value
+  // prop + change event; value PATTERNS get { value, onChange } as props and
+  // manage the value themselves.
   if (ctx && ctx.onChange && isValueComponent(node.component)) {
     const b = VALUE_BINDINGS[node.component];
-    props[b.prop] = ctx.value ?? emptyValueFor(node.component);
-    props[b.event] = (e) => ctx.onChange(b.read(e));
+    if (b) {
+      if (b.prop) props[b.prop] = ctx.value ?? emptyValueFor(node.component);
+      props[b.event] = (e) => ctx.onChange(b.read(e));
+    } else {
+      props.value = ctx.value ?? emptyValueFor(node.component);
+      props.onChange = ctx.onChange;
+    }
   }
 
   let children;

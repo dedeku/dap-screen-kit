@@ -36,6 +36,10 @@ const RADIO_ITEM      = { el: "DapDSRadioButton",          fields: ["label", "va
 const NAV_ITEM        = { el: "DapDSNavigationMenuItem",   fields: ["label"],          props: { label: "label" } };                 // NavigationMenuItem: label prop
 const BREADCRUMB_ITEM = { el: "DapDSBreadcrumbItem",       fields: ["label", "href"],  text: "label", props: { href: "href" } };   // BreadcrumbItem: href prop + text
 const SWITCHER_ITEM   = { el: "DapDSContentSwitcherItem",  fields: ["label", "value"], text: "label", props: { value: "value" } }; // ContentSwitcherItem: value prop + text
+// Pattern item specs (no `el` — the pattern renders its own items from props.items;
+// `fields` only drives the builder's options editor).
+const TIMELINE_ITEM   = { fields: ["title", "description"] };
+const PAIR_ITEM       = { fields: ["label", "value"] };
 
 export const CATALOG_COMPONENTS = [
   { name: "DapDSButton",         label: "Button",          story: "Components/Button",         slot: "text" },
@@ -53,6 +57,7 @@ export const CATALOG_COMPONENTS = [
   { name: "DapDSSwitch",         label: "Switch",          story: "Components/Switch",         slot: "none" },
   { name: "DapDSDatePicker",     label: "Date picker",     story: "Components/DatePicker",     slot: "none" },
   { name: "DapDSSearch",         label: "Search",          story: "Components/Search",         slot: "none" },
+  { name: "DapDSFileInput",      label: "File upload",     story: "Components/FileInput",      slot: "none" },
   { name: "DapDSContentSwitcher",label: "Content switcher",story: "Components/ContentSwitcher",slot: "options", item: SWITCHER_ITEM },
   // options-slot components declare an `item` spec (below) so the renderer and the
   // builder's option-list editor agree on the child element + which item fields
@@ -77,9 +82,13 @@ export const CATALOG_COMPONENTS = [
   // the Storybook argTypes overlay. slot "none" (arg-driven, no children).
   { name: "PatternHeader",  label: "Header (pattern)",  story: "Patterns/Header",  slot: "none", kind: "pattern" },
   { name: "PatternHero",    label: "Hero (pattern)",    story: "Patterns/Hero",    slot: "none", kind: "pattern" },
-  { name: "PatternFooter",  label: "Footer (pattern)",  story: "Patterns/Footer",  slot: "none", kind: "pattern" },
-  { name: "PatternStepper", label: "Stepper (pattern)", story: "Patterns/Stepper", slot: "none", kind: "pattern" },
-  { name: "PatternCtaRow",  label: "CTA Row (pattern)", story: "Patterns/CTA Row", slot: "none", kind: "pattern" },
+  { name: "PatternFooter",   label: "Footer (pattern)",    story: "Patterns/Footer",    slot: "none",    kind: "pattern" },
+  { name: "PatternStepper",  label: "Stepper (pattern)",   story: "Patterns/Stepper",   slot: "none",    kind: "pattern" },
+  { name: "PatternTimeline", label: "Timeline (pattern)",  story: "Patterns/Timeline",  slot: "options", kind: "pattern", item: TIMELINE_ITEM },
+  { name: "PatternDataList", label: "Data list (pattern)", story: "Patterns/Data List", slot: "options", kind: "pattern", item: PAIR_ITEM },
+  { name: "PatternChecklist",label: "Checklist (pattern)", story: "Patterns/Checklist", slot: "options", kind: "pattern", item: PAIR_ITEM },
+  { name: "PatternChipGroup",label: "Chip group (pattern)",story: "Patterns/Chip Group",slot: "options", kind: "pattern", item: PAIR_ITEM },
+  { name: "PatternCtaRow",   label: "CTA Row (pattern)",   story: "Patterns/CTA Row",   slot: "none",    kind: "pattern" },
 ];
 
 /** Base React export names in the manifest (e.g. "DapDSButton"). */

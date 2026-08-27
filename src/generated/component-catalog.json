@@ -3,7 +3,7 @@
   "generatedFrom": "dap-design-system@0.56.8",
   "overlay": {
     "source": "storybook-csf",
-    "components": 30
+    "components": 35
   },
   "components": {
     "DapDSButton": {
@@ -873,6 +873,37 @@
         }
       }
     },
+    "DapDSFileInput": {
+      "kebab": "dap-ds-file-input",
+      "label": "File upload",
+      "slot": "none",
+      "kind": null,
+      "source": "storybook",
+      "props": {
+        "label": {
+          "type": "string",
+          "control": "text",
+          "default": "Dokumentum"
+        },
+        "description": {
+          "type": "string",
+          "control": "text",
+          "default": "Húzd ide a fájlt, vagy tallózz."
+        },
+        "accept": {
+          "type": "string",
+          "control": "text"
+        },
+        "multiple": {
+          "type": "boolean",
+          "control": "boolean"
+        },
+        "disabled": {
+          "type": "boolean",
+          "control": "boolean"
+        }
+      }
+    },
     "DapDSContentSwitcher": {
       "kebab": "dap-ds-content-switcher",
       "label": "Content switcher",
@@ -1546,6 +1577,50 @@
           "type": "boolean",
           "control": "boolean",
           "default": true
+        }
+      }
+    },
+    "PatternTimeline": {
+      "kebab": null,
+      "label": "Timeline (pattern)",
+      "slot": "options",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {}
+    },
+    "PatternDataList": {
+      "kebab": null,
+      "label": "Data list (pattern)",
+      "slot": "options",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "editHint": {
+          "type": "string",
+          "control": "text",
+          "default": "Az adatok a DÁP-profilodból származnak."
+        }
+      }
+    },
+    "PatternChecklist": {
+      "kebab": null,
+      "label": "Checklist (pattern)",
+      "slot": "options",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {}
+    },
+    "PatternChipGroup": {
+      "kebab": null,
+      "label": "Chip group (pattern)",
+      "slot": "options",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "multiple": {
+          "type": "boolean",
+          "control": "boolean",
+          "default": false
         }
       }
     },
