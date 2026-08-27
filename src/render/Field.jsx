@@ -16,7 +16,7 @@ export default function Field({ field, values, onChange }) {
   if (typeof field.type === "string" && field.type.startsWith("ds:")) {
     const wantsFull = field.width !== "half";
     const style = wantsFull ? { gridColumn: "1 / -1" } : undefined;
-    const dsCtx = { value: values ? values[field.id] : undefined, onChange: (v) => onChange && onChange(field.id, v) };
+    const dsCtx = { value: values ? values[field.id] : undefined, onChange: (v) => onChange && onChange(field.id, v), renderField };
     return (
       <div style={style} data-field-id={field.id}>
         {renderComponentNode({ component: field.type.slice(3), props: field.props, children: field.children }, dsCtx)}

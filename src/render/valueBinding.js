@@ -31,6 +31,9 @@ export const VALUE_BINDINGS = {
 export const VALUE_PATTERNS = {
   PatternChecklist: { multi: true },
   PatternChipGroup: { multi: true },
+  // repeatable: value is an array of row objects; starts empty ([]) and is not a
+  // simple multi-select (no option-includes branching), so `multi:false`.
+  PatternRepeatable: { multi: false, array: true },
 };
 
 /** True if a catalog entry captures form data (input component OR value pattern). */
@@ -41,8 +44,9 @@ export const isValueComponent = (name) =>
 /** True if a value entry holds an array (multi-select). */
 export const isMultiValue = (name) => !!VALUE_PATTERNS[name]?.multi;
 
-/** The default value shape for a value entry (booleans false, multi [], else ""). */
+/** The default value shape for a value entry (arrays [], booleans false, else ""). */
 export const emptyValueFor = (name) => {
-  if (VALUE_PATTERNS[name]?.multi) return [];
+  const vp = VALUE_PATTERNS[name];
+  if (vp?.multi || vp?.array) return [];
   return VALUE_BINDINGS[name]?.prop === "checked" ? false : "";
 };

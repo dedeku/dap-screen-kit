@@ -101,6 +101,9 @@ export function renderComponentNode(node, ctx) {
     } else {
       props.value = ctx.value ?? emptyValueFor(node.component);
       props.onChange = ctx.onChange;
+      // Composite value patterns (repeatable) render their sub-fields controlled
+      // through the Field recursion helper handed down by the value engine.
+      if (ctx.renderField) props.renderField = ctx.renderField;
     }
   }
 

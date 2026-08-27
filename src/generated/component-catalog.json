@@ -3,7 +3,7 @@
   "generatedFrom": "dap-design-system@0.56.8",
   "overlay": {
     "source": "storybook-csf",
-    "components": 35
+    "components": 36
   },
   "components": {
     "DapDSButton": {
@@ -1621,6 +1621,25 @@
           "type": "boolean",
           "control": "boolean",
           "default": false
+        }
+      }
+    },
+    "PatternRepeatable": {
+      "kebab": null,
+      "label": "Repeatable (pattern)",
+      "slot": "none",
+      "kind": "pattern",
+      "source": "storybook",
+      "props": {
+        "addLabel": {
+          "type": "string",
+          "control": "text",
+          "default": "Gyermek hozzáadása"
+        },
+        "groupLabel": {
+          "type": "string",
+          "control": "text",
+          "default": "Gyermekek"
         }
       }
     },

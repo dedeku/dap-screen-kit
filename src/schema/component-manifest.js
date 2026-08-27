@@ -88,6 +88,9 @@ export const CATALOG_COMPONENTS = [
   { name: "PatternDataList", label: "Data list (pattern)", story: "Patterns/Data List", slot: "options", kind: "pattern", item: PAIR_ITEM },
   { name: "PatternChecklist",label: "Checklist (pattern)", story: "Patterns/Checklist", slot: "options", kind: "pattern", item: PAIR_ITEM },
   { name: "PatternChipGroup",label: "Chip group (pattern)",story: "Patterns/Chip Group",slot: "options", kind: "pattern", item: PAIR_ITEM },
+  // repeatable's sub-fields (itemFields) are edited by a dedicated builder editor,
+  // not the generic options list — so slot "none" (props: addLabel/groupLabel).
+  { name: "PatternRepeatable",label:"Repeatable (pattern)", story: "Patterns/Repeatable",slot: "none",   kind: "pattern" },
   { name: "PatternCtaRow",   label: "CTA Row (pattern)",   story: "Patterns/CTA Row",   slot: "none",    kind: "pattern" },
 ];
 

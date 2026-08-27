@@ -1552,6 +1552,21 @@
         "resolution": "1024-"
       }
     },
+    "PatternRepeatable": {
+      "story": "Patterns/Repeatable",
+      "argTypes": {
+        "addLabel": {
+          "control": "text"
+        },
+        "groupLabel": {
+          "control": "text"
+        }
+      },
+      "args": {
+        "addLabel": "Gyermek hozzáadása",
+        "groupLabel": "Gyermekek"
+      }
+    },
     "PatternStepper": {
       "story": "Patterns/Stepper",
       "argTypes": {
