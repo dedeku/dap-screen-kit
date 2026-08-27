@@ -11,14 +11,15 @@ import renderComponentNode from "./ComponentNode.jsx";
 export default function Field({ field, values, onChange }) {
   // Generic DS-component node (builder catalog): type "ds:<DapDSName>", carrying
   // a free-form `props` object + optional `children`. Rendered by the generic
-  // component renderer, NOT the field-type registry. Presentational — carries no
-  // value, so the flow/value engine ignores it (not in VALUE_FIELD_TYPES).
+  // component renderer. Input components (Input/Select/Checkbox/…) are wired
+  // controlled through the value engine via `ctx`; presentational ones ignore it.
   if (typeof field.type === "string" && field.type.startsWith("ds:")) {
     const wantsFull = field.width !== "half";
     const style = wantsFull ? { gridColumn: "1 / -1" } : undefined;
+    const dsCtx = { value: values ? values[field.id] : undefined, onChange: (v) => onChange && onChange(field.id, v) };
     return (
       <div style={style} data-field-id={field.id}>
-        {renderComponentNode({ component: field.type.slice(3), props: field.props, children: field.children })}
+        {renderComponentNode({ component: field.type.slice(3), props: field.props, children: field.children }, dsCtx)}
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React from "react";
 import * as DS from "dap-design-system/react";
 import { getComponentSlot, getComponentItem } from "../schema/component-catalog.js";
 import { getPattern } from "../patterns/index.jsx";
+import { VALUE_BINDINGS, isValueComponent, emptyValueFor } from "./valueBinding.js";
 
 /**
  * Generic DS-component node renderer — the counterpart to registry/index.jsx's
@@ -67,14 +68,26 @@ function renderOptions(name, items) {
 /**
  * Render one component node. Returns null (not a throw) for an unknown component
  * so a single bad node can't crash the whole canvas.
+ *
+ * `ctx` (optional) = { value, onChange } from the field-value engine. When given
+ * and the component is a value-bearing input, it is wired controlled (the same
+ * value prop + change event the field-type registry uses), so a ds:<Input> node
+ * captures form data. Without `ctx` (the builder canvas) it stays presentational.
  */
-export function renderComponentNode(node) {
+export function renderComponentNode(node, ctx) {
   if (!node || !node.component) return null;
   const Component = resolveComponent(node.component);
   if (!Component) return null;
 
   const slot = node.slot || getComponentSlot(node.component);
   const props = cleanProps(node.props);
+
+  // Controlled value wiring for input components (runtime only).
+  if (ctx && ctx.onChange && isValueComponent(node.component)) {
+    const b = VALUE_BINDINGS[node.component];
+    props[b.prop] = ctx.value ?? emptyValueFor(node.component);
+    props[b.event] = (e) => ctx.onChange(b.read(e));
+  }
 
   let children;
   if (slot === "options") children = renderOptions(node.component, node.props?.items ?? node.items);
