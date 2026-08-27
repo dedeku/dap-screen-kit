@@ -41,6 +41,20 @@ export function getComponentSlot(name) {
   return getManifestEntry(name)?.slot ?? null;
 }
 
+/**
+ * Option-item spec for a "options"-slot component, or null. Shape:
+ * { el, fields:[itemKey], text?:itemKey, props:{childProp:itemKey} } — see the
+ * manifest. Read by the renderer AND the builder's option-list editor.
+ */
+export function getComponentItem(name) {
+  return getManifestEntry(name)?.item ?? null;
+}
+
+/** Ordered item-field keys the option editor should show (e.g. ["label","value"]). */
+export function getComponentItemFields(name) {
+  return getManifestEntry(name)?.item?.fields ?? [];
+}
+
 export { CATALOG_COMPONENTS, CATALOG_COMPONENT_NAMES };
 
 // ── Feature flag ────────────────────────────────────────────────────────────
