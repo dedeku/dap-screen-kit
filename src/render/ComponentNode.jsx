@@ -96,7 +96,11 @@ export function renderComponentNode(node, ctx) {
   if (ctx && ctx.onChange && isValueComponent(node.component)) {
     const b = VALUE_BINDINGS[node.component];
     if (b) {
-      if (b.prop) props[b.prop] = ctx.value ?? emptyValueFor(node.component);
+      if (b.prop) {
+        const v = ctx.value ?? emptyValueFor(node.component);
+        // Some DS inputs (date picker) choke on "" — feed them `undefined` blank.
+        props[b.prop] = b.blankUndefined && isEmpty(v) ? undefined : v;
+      }
       props[b.event] = (e) => ctx.onChange(b.read(e));
     } else {
       props.value = ctx.value ?? emptyValueFor(node.component);
