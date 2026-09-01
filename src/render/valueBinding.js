@@ -15,7 +15,9 @@ export const VALUE_BINDINGS = {
   DapDSNumberInput:     { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
   DapDSTextarea:        { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
   DapDSSearch:          { prop: "value",   event: "onDdsInput",      read: (e) => e?.target?.value },
-  DapDSDatePicker:      { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
+  // blankUndefined: an empty value must reach the DS component as `undefined`,
+  // not "" — DapDSDatePicker parses "" as a date and renders "Invalid Date".
+  DapDSDatePicker:      { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value, blankUndefined: true },
   DapDSSelect:          { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
   DapDSRadioGroup:      { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
   DapDSContentSwitcher: { prop: "value",   event: "onDdsChange",     read: (e) => e?.target?.value },
